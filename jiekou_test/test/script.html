@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<table border="1px solid #ccc" cellspacing="0" id="aa">
+		</table>
+	</body>
+		<script>
+		var xml=new XMLHttpRequest;
+		xml.open("post","script.php");
+		xml.send();
+		xml.onreadystatechange=function(){
+			  if(xml.readyState==4 && xml.status==200){
+			  	   var res=xml.responseText;
+			  	   eval(res);
+			  	 for(var i=0;i<note.length;i++){
+	  	    		var con=document.createElement("tr");
+	  	    		var contd=document.createElement("td");
+	  	    		contd.innerHTML=note[i].name;
+	  	    	    var contd1=document.createElement("td");
+	  	    		contd1.innerHTML=note[i].age;
+	  	    		con.appendChild(contd);
+	  	    		con.appendChild(contd1);
+	  	    		document.getElementById("aa").appendChild(con);
+	  	    	}
+			  }
+		}
+	</script>
+</html>

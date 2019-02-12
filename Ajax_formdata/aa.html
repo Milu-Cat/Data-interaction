@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script type="text/javascript" src="jquery.js"></script>
+</head>
+<body>
+  <form name="form1" id="form1">  
+        <p>name:<input type="text" name="name" /></p>  
+        <p>gender:<input type="radio" name="gender" value="1" />male <input type="radio" name="gender" value="2" />female</p>
+        <p>stu-number：<input type="text" name="number" /></p>  
+        <p>photo:<input type="file" name="photo" id="photo"></p>  
+        <p><input type="button" name="b1" value="submit" onclick="fsubmit()" /></p>  
+</form>  
+
+<input type="text" id="abc">
+<div id="result"></div>
+</body>
+<script type="text/javascript">
+	//该方法目的是提交表单时，不用写过于繁琐的获取input的value值
+	function fsubmit() {
+        var form=document.getElementById("form1");
+        var fd =new FormData(form);
+        fd.append("#abc",$("#abc").val());
+        $.ajax({
+             url: "server.php",
+             type: "post",
+             data: fd,
+             processData: false,  // 告诉jQuery不要去处理发送的数据
+             contentType: false,   // 告诉jQuery不要去设置Content-Type请求头
+             success: function(response){
+                var json=$.parseJSON(response);
+                var result = '';
+                result +="个人信息：<br/>name:"+json['name']+"<br/>gender:"+json['gender']+"<br/>number:"+json['number'];
+                 result += '<br/>头像：<img src="' + json['photo'] + '" height="100" style="border-radius: 50%;" />';
+                 $('#result').html(result);
+             }
+        });
+        return false;
+    }
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>

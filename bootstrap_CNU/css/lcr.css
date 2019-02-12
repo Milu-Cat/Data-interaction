@@ -1,0 +1,103 @@
+.navbar-inverse {
+  border-radius: 0;
+  border: none;
+}
+.navbar-inverse .nav_box {
+  width: 100%;
+}
+.navbar-inverse .nav_box .log_d {
+  height: 50px;
+  padding-top: 5px;
+  margin-right: 15px;
+}
+.navbar-inverse .nav_box .nav_ul1 {
+  border: 1px solid #101010;
+  padding-top: 0;
+}
+.navbar-inverse .nav_box .nav_ul1 .nav_1 a {
+  height: 50px;
+  font-size: 14px;
+}
+.navbar-inverse .nav_box .nav_ul1 .nav_1 a img {
+  margin-right: 5px;
+}
+.navbar-inverse .nav_box .nav_ul1 .nav_1 a:hover {
+  background: #af1313;
+}
+.navbar-inverse .nav_box .nav_ul1 .nav_2 a {
+  height: 50px;
+  font-size: 14px;
+}
+.navbar-inverse .nav_box .nav_ul1 .nav_2 a img {
+  margin-right: 5px;
+}
+.navbar-inverse .nav_box .nav_ul1 .nav_2 a:hover {
+  background: #af1313;
+}
+.navbar-inverse .nav_box .nav_ul1 .nav_2 a {
+  color: #ccc;
+}
+.navbar-inverse .nav_box .nav_ul1 .nav_2 a:hover {
+  background: none;
+  color: #ffffff;
+}
+.navbar-inverse .nav_box .nav_ul2 {
+  border: 1px solid #101010;
+}
+.navbar-inverse .nav_box .nav_ul2 .nav_3 a {
+  font-size: 14px;
+  color: #ccc;
+}
+.navbar-inverse .nav_box .nav_ul2 .nav_3 a:hover {
+  color: #ffffff;
+}
+.navbar-inverse .nav_box .nav_ul2 .nav_4 {
+  background: #af1313;
+}
+.navbar-inverse .nav_box .nav_ul2 .nav_4 .dropdown-toggle {
+  color: #ffffff;
+}
+.navbar-inverse .nav_box .nav_ul2 .nav_4 .dropdown-toggle .dropdown-menu .nav_5 a {
+  color: #000000;
+}
+.navbar-inverse .nav_box .nav_ul2 .nav_6 {
+  margin-right: 20px;
+}
+.navbar-inverse .nav_box .nav_ul2 .nav_6 div {
+  padding-top: 10px;
+}
+.navbar-inverse .nav_box .nav_ul2 .nav_6 div input {
+  width: 230px;
+  background: #333;
+  border: none;
+  height: 30px;
+  padding-left: 10px;
+  font-size: 14px;
+  color: #ffffff;
+}
+.banner {
+  height: 400px;
+  margin-top: -20px;
+}
+.banner .banner_1 {
+  width: 100%;
+  height: 400px;
+}
+.banner .banner_1 img {
+  width: 100%;
+  height: 400px;
+}
+.part1 {
+  height: 1000px;
+  background: #000;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.part1 .part1_left {
+  background: #928383;
+  height: 500px;
+}
+.part1 .part1_right {
+  background: pink;
+  height: 500px;
+}

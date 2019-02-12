@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+<body>
+	<div id="aa">
+	     <p>用户名<input type="text" id="username"></p>
+          <p>密码<input type="password" id="pwd"></p>
+          <button onclick="ss()">提交</button>
+	</div>
+</body>
+<script>
+    //完整Ajax请求接收响应的步骤   post方法：
+//  function ss() {
+//      //1.创建Ajax对象
+//      var xmlHttp;
+//      if (window.XMLHttpRequest) {   // Ajax对象的标准创建方法，兼容ie7，8，9，10 火狐和谷歌
+//          xmlHttp = new XMLHttpRequest();
+//      } else {  //兼容ie6写法
+//          xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+//      }
+//      //2.拼接要发送的数据
+//      var username=document.getElementById("username").value;
+//      var pwd=document.getElementById("pwd").value;
+//      var x="name="+username+"&pwd="+pwd;
+//      //3.初始化Ajax
+//      xmlHttp.open("post","Ajax1_.php");
+//     //4.设置HTTP数据传输类型，如果没有第二步的发送数据，这一步可以不写。
+//     xmlHttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+//     //5.判断状态，响应数据
+//     xmlHttp.onreadystatechange=function(){
+//             if(xmlHttp.readyState==4 && xmlHttp.status==200){
+//             	     var res=xmlHttp.responseText;    //接收服务器响应的数据
+//             	     document.getElementById("aa").innerHTML=res;	
+//             }
+//     }
+//     //6.发送请求
+//     xmlHttp.send(x);
+// }
+    
+function ss(){
+	  var xml=new XMLHttpRequest();
+	  var user=document.getElementById('username').value;
+	  var pwd=document.getElementById('pwd').value;
+	  xml.open('get','Ajax1_.php?name='+user+'&pwd='+pwd);
+	  xml.send();
+	  xml.onreadystatechange=function(){
+	  	   var res=xml.responseText;
+	  	   document.getElementById('aa').innerHTML=res;
+	  }
+	  
+}
+    
+    
+     //get方法:
+//      function ss(){
+//           var xml=new XMLHttpRequest();
+//           var uname=document.getElementById("username").value;
+//           var upwd=document.getElementById("pwd").value;
+//           xml.open("get","Ajax1_.php?name="+uname+"&pwd="+upwd);
+//           xml.send();
+//           xml.onreadystatechange=function(){
+//               if(xml.readyState==4 && xml.status==200){
+//                   var res=xml.responseText;
+//                   document.getElementById("aa").innerHTML=res;
+//               }
+//           }
+//     }
+////      
+    //向后台自定义传值,不用form表单  
+//	function ss(){
+//		var xmlhttp =new XMLHttpRequest();
+//		xmlhttp.open("get", "Ajax2_js.php?name=lily&pwd=123");
+//	    xmlhttp.send();
+//		xmlhttp.onreadystatechange = function() {
+//			if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+//				var res = xmlhttp.responseText;
+//			    document.getElementById("bb").innerHTML= res;
+//		   }
+//	  }
+//	}
+//	ss();
+
+</script>
+</html>

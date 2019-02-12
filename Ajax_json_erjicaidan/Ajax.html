@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.aa,.aa li ul{
+				 list-style-type: none;
+			}
+            .aa li{
+            	  float:left;  
+            }
+            .aa li h3, .aa li ul li{
+            	  width:80px;
+            	  height:40px;
+            	  background: #ccc;
+            	  text-align: center;
+            	  line-height: 40px;
+            	  margin-right:1px;
+            }
+            .aa li ul{
+            	  margin-left:-40px;
+            	  margin-top:-19px;
+            	  display: none;
+            }
+         .aa li ul li{
+         	    height:30px;
+         	    line-height: 30px;
+         	     clear:left;
+         	     margin-top: 1px;
+         }
+		</style>
+		<script src="jquery.js"></script>
+	<script> 
+		$(function(){
+			 $.ajax({
+			 	url:"caidan.php",
+			 	type:"post",
+			 	dataType:"json",
+			 	success:function(a){
+			//json写法一：
+			 		  for(var i=0;i<a.length;i++){
+			 		  	    var con="<li class='bb'><h3>"+a[i].dh+"</h3><ul><li>"+a[i].xl.xl1+"</li><li>"+a[i].xl.xl2+"</li><li>"+a[i].xl.xl3+"</li></ul></li>";
+			 		  	    $(".aa").append(con);
+			 		  }
+          	//json写法二：
+//                   var con="";
+//                   for(var i=0;i<a.length;i++){
+//                   	  var cons="";
+//                   	  for(var j=0;j<a[i].xl.length;j++){
+//                   	  	    cons+="<li>"+a[i].xl[j]+"</li>";
+//                   	  }
+//                   	  
+//                       con+="<li><h3>"+a[i].dh+"</h3><ul>"+cons+"</ul></li>";
+//                   }
+//                   $(".aa").html(con); 	
+
+
+
+			 	}
+			 })
+			 $(".aa>li").live("mouseenter",function(){
+			 	    $(this).children("ul").show(500);
+			 }).live("mouseleave",function(){
+			 	    $(this).children("ul").stop(false,false).hide(500);
+			})
+		})
+	</script>
+</head>
+	<body>
+		<ul class="aa"></ul>
+	</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="jquery.js">
+			
+		</script>
+	</head>
+	<body>
+		<table border="1px solid #000" cellspacing="0" cellpadding="cellspacing" width="500">
+		</table>
+	</body>
+	<script>
+		$(function(){
+    $.ajax({
+        url:"http://www.qhdlink.com/stutest/teacher.php",
+        dataType:"json",
+        type:"post",
+        data:{
+            "username":"admin",
+            "pwd":"admin",
+        },
+       success:function(a){
+       	  for (var i=0;i<a.length;i++){
+       	  	var con="<tr><td>"+a[i].names+"</td><td>"+a[i].title+"</td><td>"+a[i].info+"</td><td><img src='http://www.qhdlink.com/"+a[i].pic+"'></td></tr>";
+       	  	 $("table").append(con);
+       	  }
+       }
+    })
+})
+	</script>
+</html>

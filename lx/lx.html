@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery.js"></script>
+	</head>
+	<body>
+		<!--<input type="text" id="name">
+		<input type="password" id="pwd">
+		<button id="res" onclick="ss()">提交</button>-->
+		
+		<table border="1px solid #ccc" cellspacing="0" id="aa">
+		</table>
+<!--	<div id="con">-->
+	     <!--<input type="text" id="user">
+         <input type="password" id="pwd">
+          <button onclick="ss()">提交</button>-->
+<!--	</div>-->
+	</body>
+	<script type="text/javascript">
+        $(function(){
+        	 $.ajax({
+        	 	url:"lx.php",
+        	 	dataType:"jsonp",
+        	 	jsonp:"callback",
+        	 	success:function(a){
+        	 		console.log(a);
+        	 		 for (var i=0;i<a.length;i++){
+ 	                    var con="<tr><td>"+a[i].name+"</td><td>"+a[i].age+"</td><td>"+a[i].sex+"</td></tr>";
+  	  	            $("table").append(con);
+  	  	         }
+        	 	}
+        	 });
+        })
+	</script>
+
+	</script>
+</html>

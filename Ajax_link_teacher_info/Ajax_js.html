@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{
+				background: #000;
+				color:#fff;
+			}
+			.aa,.bb{
+				width:100%;
+				text-align: center;
+				font-size: 20px;
+			}
+			.bb{
+				 font-size: 14px; 
+			}
+			.box{
+				     width:100%;
+				     height:302px;
+				   /*  background: #ccc;*/
+				    padding:0.1px;
+		           overflow: hidden;
+			}
+			.cc{
+				    width:100%;
+				     height:205px;
+				/*   background: green;*/
+				     margin-top:130px;
+		 }
+		.cc div{
+				    width:150px;
+				    height:205px;
+				    float:left; 
+				     margin-left:150px;
+			      /* background: pink;*/
+                  transition-property:margin-top;
+                   transition-duration: 1s;
+                   transition-timing-function:ease; 
+			}
+        .cc div:hover{
+             margin-top: -148px;
+       } 
+			.cc div p{
+		  	     clear:left;
+				  width:150px;
+				  height:150px;
+				  border-radius: 50%;
+				  overflow:hidden;
+			}
+       .cc div article{
+       	        font-size:10px;
+       	        margin-top:5px;
+       }
+			.cc div p img{
+				  width:150px;
+				  height:150px; 
+			}
+         .cc div section{
+         	  margin-left:50px;
+         }
+			.ee { 
+				   clear:left;
+				    font-size:10px;
+			}
+			.ee p{
+				  float:left;  
+				   width:200px;  	
+			}
+			.ee .t1,.ee .t2,.ee .t3,.ee .t4{
+				   margin-left:100px;
+			}
+		</style>
+	
+</head>
+	<body>
+		<p class="aa">配得上大牛的导师来教你</p>
+		<p class="bb">来自名企的技术主管，BAT核心技术</p>
+		<div class="box">
+	        <div class="cc" id="cc"></div>
+		</div>
+	</body>
+<script>
+          var x=0;	
+          var xml=new XMLHttpRequest();
+          var y="username=admin&pwd=admin";
+          xml.open("post","http://www.qhdlink.com/stutest/teacher.php");
+          xml.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+          xml.send(y);
+          xml.onreadystatechange=function(){
+          	   if(xml.readyState==4 && xml.status==200){
+          	   	   var res=xml.responseText;
+          	   	   var res_=JSON.parse(res);
+          	   	   for(var i=0;i<res_.length;i++){
+          	   	   	   x+=1;
+          	   	   	   var dv=document.createElement("div");
+          	   	   	   dv.id="z"+x+"";
+          	   	   	   dv.innerHTML="<p class='s"+x+"' id='s"+x+"'><img src='http://www.qhdlink.com/"+res_[i].pic+"'></p><section class='name"+x+"'>"+res_[i].names+"</section><article>"+res_[i].title+'<br>项目:'+res_[i].info+"</article>";	
+          	   	   	   document.getElementById("cc").appendChild(dv);
+          	   	   }
+          	   }
+          }
+	</script>
+</html>

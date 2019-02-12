@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 ">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/lcr.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="swiper.min.css">
+    <script src="jquery-1.11.0.min.js"></script>
+    <script src="swiper.min.js"></script>
+    <!-- <script src="jquery.js"></script> -->
+    <!-- <script src="js/bootstrap.js"></script> -->
+    <script src="js/bootstrap.min.js"></script>
+    <title>CNU视觉联盟index</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <!-- 导航开始 -->
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container nav_box">
+            <div class="navbar-header ">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
+                    <!-- <span class="sr-only">切换导航</span> -->
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="http://www.cnu.cc/">
+                    <div class="log_d"><img src="img/log.png" class="log"></div>
+                </a>
+            </div>
+            <div class="collapse navbar-collapse " id="example-navbar-collapse">
+                <ul class="nav navbar-nav nav_ul1">
+                    <li class="active nav_1"><a href="#"><img src="img/V{KJSYAMG2Y3PW9GEE$RDJ1.png"><span>首页</span></a></li>
+                    <li class="active nav_2"><a href="#"><img src="img/(UH55_ZFR{96XE$N0D6W{4A.jpg"><span>灵感</span></a></li>
+                    <li class="active nav_2"><a href="#"><img src="img/{ZJ$2]SJSHGN)913FCRZDIW.jpg"><span>原创</span></a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right nav_ul2">
+                    <li class="active nav_6">
+                        <div>
+                            <input type="text" placeholder="登录后搜索">
+                        </div>
+                    </li>
+                    <li class="dropdown nav_4">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">投稿<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li class="nav_5"><a href="#">原创图集</a></li>
+                            <li><a href="#">原创教程</a></li>
+                        </ul>
+                    </li>
+                    <li class="active nav_3"><a href="#"><span>注册</span></a></li>
+                    <li class="active nav_3"><a href="#"><span>登陆</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- banner图开始 -->
+    <div class="container banner">
+        <div class="swiper-container banner_1">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide a"><img src="img/1aca9fe4049e30deaf6dcc3fc9a57874.jpg"></div>
+                <div class="swiper-slide b"><img src="img/2e23bce486b3394cbfedc7c3d120360e.jpg"></div>
+                <div class="swiper-slide c"><img src="img/c49cbd6c923e3a16ab00190b71356cbf.jpg"></div>
+                <div class="swiper-slide b"><img src="img/e6bcafb501753b9f9e168234e6420a53.jpg"></div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+    <!-- 每日精选 -->
+    <div class="container part1">
+       <div class="row">
+          <div class="col-md-8 col-sm-12 col-xs-12 part1_left">
+             <h2>每日精选</h2>
+          </div>
+          <div class="col-md-4 col-sm-12 col-xs-12 part1_right">
+
+          </div>
+       </div>
+    </div>
+</body>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        centeredSlides: true,
+        // loop:true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+</script>
+</html>

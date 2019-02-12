@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<script src="jquery.js"></script>
+<script>
+//接收后台PHP文件里面的json
+//从后台获取值
+//$(function(){
+//  $.ajax({
+//      url:"Ajax2_json.php",
+//      dataType:"text", //如果这里text写成json,下面的var x=JSON.parse(a);不用写
+//      type:"post",
+//      async:true,  
+//     success:function(a){
+//        eval(a);
+//     	  for (var i=0;i<x.length;i++){
+//     	  	var con="<tr><td>"+x[i].name+"</td><td>"+x[i].age+"</td><td>"+x[i].sex+"</td></tr>";
+//     	  	 $("table").append(con);
+//     	  }
+//     },
+//     error:function(){ alert("数据请求失败")},
+//  })
+//})
+
+
+ 
+ //向后台传值
+$(function(){
+    $.ajax({
+        url:"Ajax2_json.php",
+        dataType:"text", 
+        type:"post",
+        data:{name:"lily",age:"123",sex:"16"},
+        async:true,  
+       success:function(data){
+	          $("div").append(data);
+	       },
+       error:function(){ alert("数据请求失败")},
+    })
+})
+</script>
+</head>
+	<body>
+		<table border="1px solid #000" cellspacing="0" cellpadding="cellspacing" width="500">
+		</table>
+		<div></div>
+	</body>
+</html>

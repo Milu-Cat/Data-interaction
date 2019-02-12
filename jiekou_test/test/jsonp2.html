@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script type="text/javascript" src="jquery.js"></script>
+	<body>
+		<div id="aa"></div>
+	</body>
+		<script>
+//			$(function(){
+//				    $.ajax({
+//				    	  url:"jsonp2.php",
+//				    	  dataType:"jsonp",
+//				    	  jsonp:"callback",
+//				    	  jsonpCallback:"ss",
+//				    	  success:function(a){
+//				    	  	 for(var i=0;i<a.length;i++){
+//                              var x="<h1>"+a[i].title+"</h1>";
+//                              var y="<div>"+a[i].t+"</div>";
+//                              $("#aa").append(x);
+//                              $("#aa").append(y);
+//		                   	}
+//				    	 }
+//				    })
+//			})
+
+//原生js
+		 function ss(a){
+
+		 	for(var i=0;i<a.length;i++){
+			 	let {title,t}=a[i];
+		 		  var tit=document.createElement("h1");
+		 		  var x=title
+		 		  tit.innerHTML=x;
+		 		  var y=t
+		 		  var con=document.createElement("div");
+		 		  con.innerHTML=y;
+		 		  document.getElementById("aa").appendChild(tit);
+		 		  document.getElementById("aa").appendChild(con);
+		 	}
+		 }
+	</script>
+	<script type="text/javascript" src="jsonp2.php?callback=ss"></script>
+</html>

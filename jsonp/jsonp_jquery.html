@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<table border="1px solid #000" cellspacing="0">
+		</table>
+	</body>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			 $.ajax({
+			 	 url:"jsonp.php",
+		     	 dataType:"jsonp",
+			 	 jsonp:"callback",
+			 	 success:function(a){
+                   for (var i=0;i<a.length;i++){
+ 	                    var con="<tr><td>"+a[i].name+"</td><td>"+a[i].age+"</td><td>"+a[i].sex+"</td></tr>";
+  	  	            $("table").append(con);
+  	  	         }
+               }
+			 })
+			 
+//			 $.getJSON("jsonp.php?callback=?",function(a){
+//			 	   for (var i=0;i<a.length;i++){
+// 	                    var con="<tr><td>"+a[i].name+"</td><td>"+a[i].age+"</td><td>"+a[i].sex+"</td></tr>";
+//	  	            $("table").append(con);
+//	  	       }
+//			 })
+
+		})
+	</script>
+</html>

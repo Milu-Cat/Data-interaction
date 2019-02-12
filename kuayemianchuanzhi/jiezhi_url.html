@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		function ss(){
+			 var str=location.search;
+			 var nstr=str.slice(1);
+			 var ar=nstr.split("&");
+			 var res=new Object();	
+			 for(var i=0;i<ar.length;i++){
+			 	 //相当于res[name]="lily",给res空对象自定义一个叫name的属性，该属性值是lily
+			 	  res[ar[i].split("=")[0]]=ar[i].split("=")[1];
+			 }
+			 return res;
+		}
+		var data=ss();
+		document.write(data.pwd+","+data.name);
+
+
+
+	</script>
+</html>

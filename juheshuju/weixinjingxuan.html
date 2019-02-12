@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<table border="1px solid #ccc"></table>
+	</body>
+	<script src="jquery.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			  $.ajax({
+			  	 url:"http://v.juhe.cn/weixin/query?key=c9343fbdcd73fa6210a39ed6ede9f58c",
+			  	  type:"get",
+			  	  dataType:"jsonp",
+			  	  jsonp:'callback',
+			  	  success:function(a){
+			  	  	console.log(a.list);
+//			  	  	   for(var i=0;i<a.list.length;i++){
+//			  	  	   	    var con="<tr><td><a href='"+a.list[i].url+"'>"+a.list[i].source+"</td><td>"+a.list[i].title+"</td></tr>";
+//			  	  	   	    $("table").append(con);
+//			  	  	   }
+			  	  }
+			 })
+		})
+	</script>
+</html>

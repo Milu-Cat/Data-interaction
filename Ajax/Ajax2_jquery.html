@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<script src="jquery.js"></script>
+<script>
+$(function(){
+	//$.ajax方法：
+//  $.ajax({
+//      url:"Ajax2.php",
+//      dataType:"text",
+//      type:"post",
+//      data:{
+//          name:"root",
+//          pwd:"root",
+//      },
+//      async:true,  //默认是true，可以不写该选项。
+//     success:function(a){$("div").html(a)} , //后台会把返回来的数据传到参数a中，直接可以用a就可以。
+//     error:function(){ return "数据请求失败"},
+//  })
+    
+    
+    //$.get方法：
+//      $.get("Ajax2.php?name=lily&pwd=123",function(a){
+//      alert(a);
+//  })
+
+
+    //$.post方法：     
+//  $.post("Ajax2.php",{"name":"lily","pwd":"123"},function(a){
+//      alert(a);
+//  })
+
+
+  //请求link网站
+    $.ajax({
+        url:"http://www.qhdlink.com/stutest/teacher.php",
+        dataType:"json",
+        type:"post",
+        data:{
+            "username":"admin",
+            "pwd":"admin",
+        },
+       success:function(a){
+       	  for (var i=0;i<a.length;i++){
+       	  	var con="<tr><td>"+a[i].names+"</td><td>"+a[i].title+"</td><td>"+a[i].info+"</td><td><img src='http://www.qhdlink.com/"+a[i].pic+"'></td></tr>";
+       	  	 $("table").append(con);
+       	  }
+       }
+    })
+})
+</script>
+</head>
+	<body>
+		<table border="1px solid #000" cellspacing="0" cellpadding="cellspacing" width="500">
+		</table>
+	</body>
+</html>

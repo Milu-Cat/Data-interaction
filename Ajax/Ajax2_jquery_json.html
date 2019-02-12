@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<script src="jquery.js"></script>
+<script>
+	//接收后台json文件里面的json
+$(function(){
+    $.ajax({
+        url:"Ajax2.json",
+        dataType:"json",
+        type:"post",
+        async:true,  
+       success:function(a){
+       	  for (var i=0;i<a.length;i++){
+       	  	var con="<tr><td>"+a[i].name+"</td><td>"+a[i].age+"</td><td>"+a[i].sex+"</td></tr>";
+       	  	 $("table").append(con);
+       	  }
+       },
+       error:function(){ alert("数据请求失败")},
+    })
+})
+</script>
+</head>
+	<body>
+		<table border="1px solid #000" cellspacing="0" cellpadding="cellspacing" width="500">
+		</table>
+	</body>
+</html>

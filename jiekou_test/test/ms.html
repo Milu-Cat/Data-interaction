@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h1 id="aa"></h1>
+	</body>
+	<script>
+		var xml=new XMLHttpRequest;
+		xml.open("post","ms.php");
+		xml.send();
+		xml.onreadystatechange=function(){
+			  if(xml.readyState==4 && xml.status==200){
+			  	   var res=xml.responseText;
+			  	   document.getElementById("aa").innerHTML=res;
+			  }
+		}
+	</script>
+</html>

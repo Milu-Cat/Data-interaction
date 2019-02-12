@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript">
+			 $(function(){
+			 	  $.ajax({
+			 	  	   url:"nav.php",
+			 	  	   dataType:"json",
+			 	  	   type:"post",
+			 	  	   success:function(a){
+                          console.log(a);         
+			 	  	   	    for(var i=0;i<a.length;i++){
+                                 for(var j=0;j<a[i].length;j++){
+                                 	if(a[i][j].p_id%2==0){
+                                       var x="<li><h2>"+a[i][j].p_type+"</h2></li>";
+                                       $(".aa").append(x);
+                                    }
+                                      if(a[i][j].p_id%2!==0){
+                                      	var c="";
+                                     	for(var z=0;z<a[i][j].child.length;z++){
+                                     		     
+                                     		c+="<li>"+a[i][j].child[z]+"</li>"
+                                     	}
+                                     	   	var y="<li><h2>"+a[i][j].p_type+"</h2><ul>"+c+"</ul></li>";
+                                     		  $(".aa").append(y);                              	
+                                     }
+                                 }
+			 	  	   	    }
+			 	  	   
+			 	  	   }
+			 	  })
+			 })
+
+
+		</script>
+		<style type="text/css">
+			.aa{
+				list-style-type: none;
+			}
+			.aa>li{
+				float:left;
+				margin-left:20px;
+				
+			}
+            .aa>li>ul{
+            	list-style-type: none;
+            	margin-left: -15px;
+            }
+		</style>
+	</head>
+	<body>
+      <ul class="aa">
+      
+      </ul>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form>
+			<p>用户名：<input type="text" id="name" /></p>
+			<p>密码：<input type="password" id="pwd" /></p>
+		</form>
+	</body>
+	<script>
+		 function jsonpCallback(a){
+		 	 var nam=a.n;
+		 	 var pw=a.p;
+		 	   document.getElementById("name").value=nam;
+		 	   document.getElementById("pwd").value=pw;
+		 }
+	</script>
+	<script type="text/javascript" src="jsonp1.php"></script>
+</html>
+

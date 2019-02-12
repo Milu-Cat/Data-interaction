@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+	
+		</style>
+		<script src="jquery.js"></script>
+	<script> 
+$(function(){
+			//ex.js
+//           $.ajax({
+//           	  url:("lx1.js"),
+//           	  dataType:"script",
+//           	  type:"post",
+//           	  success:function(a){
+//           	  	var con="var x="+a; //js中的对象没有变量名，需要用一个变量连接，在用eval运行
+//           	  	eval(con);
+//           	  	  for(var i=0;i<x.length;i++){
+//           	  	  	  var con="<tr><td>"+x[i].name+"</td><td>"+x[i].age+"</td></tr>";
+//           	  	  	  $(".aa").append(con);
+//           	  	  }
+//           	  	  
+//           	  },
+//           })
+
+
+           //ms.php 
+//           $.ajax({
+//           	  url:("lx.php"),
+//           	  dataType:"text",
+//           	  type:"post",
+//           	  success:function(a){
+//                      $(".bb").html(a); 
+//           	  	  
+//           	  },
+//           })
+
+
+       // script.php
+             $.ajax({
+             	  url:("lx.php"),
+             	  dataType:"text",
+             	  type:"post",
+             	  success:function(a){
+             	  	 eval(a);    //php文件输出的是一个js对象的字符串，直接用eval运行一下，就可以直接用这个js对象
+             	  	  for(var i=0;i<note.length;i++){
+             	  	  	  var con="<tr><td>"+note[i].name+"</td><td>"+note[i].age+"</td></tr>";
+             	  	  	  $(".aa").append(con);
+             	  	  }
+             	  	  
+             	  },
+             }) 
+
+})
+</script>
+</head>
+	<body>
+		<table class="aa" border="1px solid #000" cellspacing="0" cellpadding="cellspacing" width="500"></table>
+		<p class="bb" id="bb"></p>
+	</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<table id="aa"></table>
+		<div id="bb">
+			 <!--用户名：<input type="text" id="name">
+                              密码：<input type="password" id="pwd">
+            <button onclick="ss()">提交</button>-->
+		</div>
+	</body>
+	<script>
+		
+//从后台json文件里获取值   
+function ss(){
+	  var xmlhttp=new XMLHttpRequest();
+	  xmlhttp.open("post","Ajax2.json");
+	  xmlhttp.send();
+	  xmlhttp.onreadystatechange=function(){
+	  	    if(xmlhttp.readyState==4 && xmlhttp.status==200){
+	  	    	var res=xmlhttp.responseText;
+	  	    	var cons=JSON.parse(res);
+	  	    	for(var i=0;i<cons.length;i++){
+	  	    		var con=document.createElement("tr");
+	  	    		var contd=document.createElement("td");
+	  	    		contd.innerHTML=cons[i].name;
+	  	    	    var contd1=document.createElement("td");
+	  	    		contd1.innerHTML=cons[i].age;
+	  	    		var contd2=document.createElement("td");
+	  	    		contd2.innerHTML=cons[i].sex;
+	  	    		con.appendChild(contd);
+	  	    		con.appendChild(contd1);
+	  	    		con.appendChild(contd2);
+	  	    		document.getElementById("aa").appendChild(con);
+	  	    	}
+	  	    	
+	  	    }
+	  }
+}
+ss();
+
+//从后台php文件里获取值   
+//function ss(){
+//	  var xmlhttp=new XMLHttpRequest();
+//	  xmlhttp.open("post","Ajax2_json.php");
+//	  xmlhttp.send();
+//	  xmlhttp.onreadystatechange=function(){
+//	  	    if(xmlhttp.readyState==4 && xmlhttp.status==200){
+//	  	    	var res=xmlhttp.responseText;
+//	  	    	eval(res);
+//	  	    	for(var i=0;i<x.length;i++){
+//	  	    		var con=document.createElement("tr");
+//	  	    		var contd=document.createElement("td");
+//	  	    		contd.innerHTML=x[i].name;
+//	  	    	    var contd1=document.createElement("td");
+//	  	    		contd1.innerHTML=x[i].age;
+//	  	    		var contd2=document.createElement("td");
+//	  	    		contd2.innerHTML=x[i].sex;
+//	  	    		con.appendChild(contd);
+//	  	    		con.appendChild(contd1);
+//	  	    		con.appendChild(contd2);
+//	  	    		document.getElementById("aa").appendChild(con);
+//	  	    	}
+//	  	    	
+//	  	    }
+//	  }
+//}
+//ss();
+
+
+ 
+	</script>
+
+</html>

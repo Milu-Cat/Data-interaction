@@ -1,0 +1,147 @@
+@float-l:left;
+@float-r:right;
+@width:1170px;
+@height:91px;
+@w100:{width:100%};
+@h100:{height: 100%};
+@color:#ccc;
+@c1:{color:#fff};
+@c2:{color:#000};
+@padding:20px;
+@margin:100px;
+@font-size:20px;
+@bkd:background;
+@w:width;
+@h:height;
+@fl:{float:left};
+@fr:{float:right};
+@mt:margin-top;
+@ml:margin-left;
+@mr:margin-right;
+@mtm:margin-bottom;
+@pt:padding-top;
+@ptm:padding-bottom;
+@pl:padding-left;
+@pr:padding-right;
+@p:padding;
+@fn:font-size;
+@mr:margin-right;
+@c:color;
+@lh:line-height;
+@fn14:{font-size: 14px};
+
+//导航开始
+.navbar-inverse{
+    border-radius: 0;
+    border:none;
+    .nav_box{
+      @w100(); 
+      .log_d{
+         @{h}:50px;
+         @{pt}:5px;
+         @{mr}:15px;
+      }
+      .nav_ul1{
+          border:1px solid #101010;
+          @{pt}:0;
+        .nav_1{
+            a{
+                  @{h}:50px;
+                  @{fn}:14px;
+                  img{
+                       @{mr}:5px;
+                  }
+            }
+            a:hover{
+                 @{bkd}:rgb(175, 19, 19);
+            }
+           
+        }
+        .nav_2{
+             .nav_1();
+  
+             a{
+                  @{c}:#ccc;
+             }
+             a:hover{
+                @{bkd}:none;
+                @c1();
+             }
+        }
+      }
+
+      .nav_ul2{
+        //   @{bkd}:#000;
+        border:1px solid #101010;
+         .nav_3{
+             a{
+                 @fn14();
+                 @{c}:#ccc;
+             }
+             a:hover{
+                @c1();
+             }
+         }
+         .nav_4{
+             @{bkd}:rgb(175, 19, 19); 
+             .dropdown-toggle   {
+                 @c1();
+                 .dropdown-menu{
+                     .nav_5{
+                         a{
+                            @c2(); 
+                         }
+                          
+                     }
+                 }
+             }
+         }
+         .nav_6{
+               @{mr}:20px;
+            //    @{bkd}:#000;
+            //    @{mt}:-10px;
+               div{
+                  @{pt}:10px;
+                  input{
+                       @{w}:230px;
+                       @{bkd}:#333;
+                       border:none;
+                       @{h}:30px;
+                       @{pl}:10px;
+                       @fn14();
+                       @c1();
+                  }
+               }
+         }
+      }
+  }
+}
+//banner图开始
+.banner{
+      @{h}:400px;
+    //   @{bkd}:#000;
+      @{mt}:-20px;
+      .banner_1{
+            @w100();
+            @{h}:400px;
+            img{
+                @w100();
+                @{h}:400px; 
+            }
+      }
+}
+//每日精选开始
+.part1{
+      @{h}:1000px;
+      @{bkd}:#000;
+      @{pl}:25px;
+      @{pr}:25px;
+      .part1_left{
+          @{bkd}:rgb(146, 131, 131);
+          @{h}:500px;
+      }
+      .part1_right{
+        @{bkd}:pink;
+        @{h}:500px;
+    }
+}

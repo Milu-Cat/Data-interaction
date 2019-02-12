@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<iframe src="kuayemianchuanzhi_iframe_b.html" id="ifr" style="display: none"></iframe>
+		<p id="aa"></p>
+	</body>
+	<script type="text/javascript">
+		var  iframe=document.getElementById("ifr");
+		iframe.onload=function(){
+			var data=JSON.parse(iframe.contentWindow.name);
+			document.getElementById("aa").innerHTML=data.name+","+data.age;
+		}
+	</script>
+</html>

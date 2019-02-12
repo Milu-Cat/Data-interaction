@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<table border="1px solid #000" cellspacing="0" id="aa"></table>
+		<button id="bb">点击</button>
+		<div id="cc"></div>
+	</body>
+	 <script>
+	      function ss(a){    
+	      // 一
+	   // 原生js 
+	  	    	for(var i=0;i<a.length;i++){
+	  	    		var con=document.createElement("tr");
+	  	    		var contd=document.createElement("td");
+	  	    		contd.innerHTML=a[i].name;
+	  	    	    var contd1=document.createElement("td");
+	  	    		contd1.innerHTML=a[i].age;
+	  	    		var contd2=document.createElement("td");
+	  	    		contd2.innerHTML=a[i].sex;
+	  	    		con.appendChild(contd);
+	  	    		con.appendChild(contd1);
+	  	    		con.appendChild(contd2);
+	  	    		document.getElementById("aa").appendChild(con);
+	  	    	}  
+
+        //二
+//        	 document.getElementById("cc").innerHTML=a.name;
+        }
+	                    //通过点击事件触发jsonp跨域传值. 如果不通过点击事件触发,则取消41行代码的注释即可.
+//            document.getElementById("bb").onclick=function(){
+//            	     var sc=document.createElement("script");
+//            	     sc.setAttribute("src","jsonp.php?callback=ss");
+//            	     document.getElementsByTagName("html")[0].appendChild(sc);
+//            }
+	</script>
+<!-- 一 -->
+	<script type="text/javascript" src="jsonp.php?callback=ss"></script>
+<!--  二-->
+<!--<script type="text/javascript" src="jsonp.php"></script>-->
+</html>
